@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>joplin-server</Name>
+  <Repository>joplin/server</Repository>
+  <Registry>https://hub.docker.com/r/joplin/server</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Joplin is a free, open source note taking and to-do application, which can handle a large number of notes organised into notebooks. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in Markdown format.&#xD;
+&#xD;
+&#xD;
+Access the server via the set APP_BASE_URL to change the default admin credentials as well as to create new users. Note: If that URL is different than the WebUI URL, you won't be able to access via Unraid (e.g. when using a reverse proxy).&#xD;
+&#xD;
+default email: admin@localhost&#xD;
+default password: admin</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:22300]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/brugues/docker-templates/main/icons/joplin.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1720457867</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>PostgreSQL</Requires>
+  <Config Name="APP_PORT" Target="APP_PORT" Default="22300" Mode="" Description="Port where the server is listening" Type="Variable" Display="always" Required="true" Mask="false">22300</Config>
+  <Config Name="APP_BASE_URL" Target="APP_BASE_URL" Default="http://localhost:22300" Mode="" Description="URL of the server" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="DB_CLIENT" Target="DB_CLIENT" Default="pg" Mode="" Description="Defines Postgres as the type of database to use" Type="Variable" Display="always" Required="true" Mask="false">pg</Config>
+  <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Password of the Postgres database" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="POSTGRES_USER" Target="POSTGRES_USER" Default="" Mode="" Description="Name of the Postgres user" Type="Variable" Display="always" Required="true" Mask="false">joplin</Config>
+  <Config Name="POSTGRES_PORT" Target="POSTGRES_PORT" Default="5432" Mode="" Description="Port where Postgres is listening" Type="Variable" Display="always" Required="true" Mask="false">5432</Config>
+  <Config Name="POSTGRES_HOST" Target="POSTGRES_HOST" Default="localhost" Mode="" Description="Host of the Postgres instance" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="POSTGRES_DATABASE" Target="POSTGRES_DATABASE" Default="" Mode="" Description="Name of the Postgres database" Type="Variable" Display="always" Required="true" Mask="false">joplin</Config>
+  <Config Name="App Port" Target="22300" Default="22300" Mode="tcp" Description="Port where server is listening" Type="Port" Display="always-hide" Required="true" Mask="false">22300</Config>
+  <Config Name="MAILER_ENABLED" Target="MAILER_ENABLED" Default="0" Mode="" Description="Activate admin mails by changing the value to 1 and modifying the following variable to your provider settings. (Show more settings)" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="MAILER_AUTH_PASSWORD" Target="MAILER_AUTH_PASSWORD" Default="" Mode="" Description="Email password" Type="Variable" Display="advanced-hide" Required="false" Mask="true"/>
+  <Config Name="MAILER_NOREPLY_NAME" Target="MAILER_NOREPLY_NAME" Default="" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">JoplinServer</Config>
+  <Config Name="MAILER_NOREPLY_EMAIL" Target="MAILER_NOREPLY_EMAIL" Default="" Mode="" Description="Email address" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="MAILER_AUTH_USER" Target="MAILER_AUTH_USER" Default="" Mode="" Description="Email address" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="MAILER_SECURITY" Target="MAILER_SECURITY" Default="starttls" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">starttls</Config>
+  <Config Name="MAILER_PORT" Target="MAILER_PORT" Default="587" Mode="" Description="SMTP Port" Type="Variable" Display="advanced-hide" Required="false" Mask="false">587</Config>
+  <Config Name="MAILER_HOST" Target="MAILER_HOST" Default="" Mode="" Description="SMTP server" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>
